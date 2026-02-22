@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>투자 성향 분석기</title>
+    <title>내게 맞는 투자 방법 찾기</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="hero-section">
-        <h1>투자 성향 분석기</h1>
-        <p>몇 가지 질문에 답하고 당신의 투자 스타일을 알아보세요!</p>
+        <h1>내 투자 스타일은?</h1>
+        <p>어렵지 않아요! 몇 가지 질문에 답하고 나에게 꼭 맞는 투자 방법을 찾아보세요.</p>
     </header>
 
     <main>
         <form id="quiz-form" class="quiz-card">
-            <h2>당신의 투자 성향은?</h2>
+            <h2>내 투자 스타일은?</h2>
             
             <!-- 질문 1 -->
             <div class="question">
-                <p>1. 당신의 연령대는 어떻게 되십니까?</p>
+                <p>1. 연세가 어떻게 되시나요?</p>
                 <label><input type="radio" name="q1" value="10"> 20대 이하</label>
                 <label><input type="radio" name="q1" value="20"> 30대</label>
                 <label><input type="radio" name="q1" value="15"> 40대</label>
@@ -27,45 +27,45 @@
 
             <!-- 질문 2 -->
             <div class="question">
-                <p>2. 투자 경험이 어느 정도 있으십니까?</p>
-                <label><input type="radio" name="q2" value="5"> 없음</label>
-                <label><input type="radio" name="q2" value="10"> 1년 미만</label>
-                <label><input type="radio" name="q2" value="15"> 1~5년</label>
-                <label><input type="radio" name="q2" value="20"> 5년 이상</label>
+                <p>2. 투자, 해보신 적 있으신가요?</p>
+                <label><input type="radio" name="q2" value="5"> 아니요, 처음이에요</label>
+                <label><input type="radio" name="q2" value="10"> 이제 막 시작했어요</label>
+                <label><input type="radio" name="q2" value="15"> 조금 해봤어요</label>
+                <label><input type="radio" name="q2" value="20"> 경험이 많아요</label>
             </div>
 
             <!-- 질문 3 -->
             <div class="question">
-                <p>3. 단기적인 시장 하락 (예: -15%)에 어떻게 반응하시겠습니까?</p>
-                <label><input type="radio" name="q3" value="5"> 모든 투자를 즉시 매도한다</label>
-                <label><input type="radio" name="q3" value="10"> 일부를 매도하고 상황을 지켜본다</label>
-                <label><input type="radio" name="q3" value="15"> 그대로 유지한다</label>
-                <label><input type="radio" name="q3" value="20"> 추가 매수 기회로 삼는다</label>
+                <p>3. 만약 투자한 돈이 15% 줄어든다면, 어떻게 하시겠어요?</p>
+                <label><input type="radio" name="q3" value="5"> 무서워서 다 팔래요</label>
+                <label><input type="radio" name="q3" value="10"> 조금 팔고 지켜볼래요</label>
+                <label><input type="radio" name="q3" value="15"> 기다리면 오를 거라 믿어요</label>
+                <label><input type="radio" name="q3" value="20"> 더 살 수 있는 좋은 기회예요</label>
             </div>
 
             <!-- 질문 4 -->
             <div class="question">
-                <p>4. 투자를 통해 기대하는 연평균 수익률은 어느 정도입니까?</p>
-                <label><input type="radio" name="q4" value="5"> 5% 미만 (안정적인 수익)</label>
-                <label><input type="radio" name="q4" value="10"> 5% ~ 10%</label>
-                <label><input type="radio" name="q4" value="15"> 10% ~ 20%</label>
-                <label><input type="radio" name="q4" value="20"> 20% 이상 (높은 위험 감수)</label>
+                <p>4. 일 년에 어느 정도 수익을 기대하시나요?</p>
+                <label><input type="radio" name="q4" value="5"> 은행 이자보다 조금 더 (5% 미만)</label>
+                <label><input type="radio" name="q4" value="10"> 조금의 위험은 괜찮아요 (5% ~ 10%)</label>
+                <label><input type="radio" name="q4" value="15"> 어느 정도 위험을 감수할 수 있어요 (10% ~ 20%)</label>
+                <label><input type="radio" name="q4" value="20"> 위험해도 높은 수익이 좋아요 (20% 이상)</label>
             </div>
 
             <!-- 질문 5 -->
             <div class="question">
-                <p>5. 투자 원금의 손실을 어느 정도까지 감수할 수 있습니까?</p>
-                <label><input type="radio" name="q5" value="5"> 원금 손실은 절대 안 된다</label>
-                <label><input type="radio" name="q5" value="10"> 최대 10%까지</label>
-                <label><input type="radio" name="q5" value="15"> 최대 30%까지</label>
-                <label><input type="radio" name="q5" value="20"> 50% 이상도 감수 가능</label>
+                <p>5. 만약에 손해를 본다면, 어느 정도까지 괜찮으신가요?</p>
+                <label><input type="radio" name="q5" value="5"> 원금은 꼭 지켜야 해요</label>
+                <label><input type="radio" name="q5" value="10"> 조금은 괜찮아요 (10%까지)</label>
+                <label><input type="radio" name="q5" value="15"> 감수할 수 있어요 (30%까지)</label>
+                <label><input type="radio" name="q5" value="20"> 큰 손해도 괜찮아요 (50% 이상)</label>
             </div>
 
-            <button type="submit" class="submit-btn">결과 분석하기</button>
+            <button type="submit" class="submit-btn">내 투자 스타일 알아보기</button>
         </form>
 
         <section id="result-section" class="result-card" style="display: none;">
-            <h2>분석 결과</h2>
+            <h2>내 투자 스타일은 바로...</h2>
             <div id="result-content">
                 <!-- 분석 결과가 여기에 동적으로 삽입됩니다. -->
             </div>
