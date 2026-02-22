@@ -81,6 +81,7 @@ body {
     background-color: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
+    font-weight: 700;
 }
 
 .submit-btn {
