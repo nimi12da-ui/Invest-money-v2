@@ -3,75 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내게 맞는 투자 방법 찾기</title>
+    <title>나의 투자 성향 테스트</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hero-section">
-        <h1>내 투자 스타일은?</h1>
-        <p>어렵지 않아요! 몇 가지 질문에 답하고 나에게 꼭 맞는 투자 방법을 찾아보세요.</p>
-    </header>
+    <div class="container">
+        <header class="hero-section">
+            <h1>숨어있는 내 투자 본능 찾기</h1>
+            <p>나는 투자 세계에서 어떤 동물과 닮았을까요?</p>
+        </header>
 
-    <main>
-        <form id="quiz-form" class="quiz-card">
-            <h2>내 투자 스타일은?</h2>
-            
-            <!-- 질문 1 -->
-            <div class="question">
-                <p>1. 연세가 어떻게 되시나요?</p>
-                <label><input type="radio" name="q1" value="10"> 20대 이하</label>
-                <label><input type="radio" name="q1" value="20"> 30대</label>
-                <label><input type="radio" name="q1" value="15"> 40대</label>
-                <label><input type="radio" name="q1" value="5"> 50대 이상</label>
-            </div>
+        <main>
+            <form id="quiz-form" class="quiz-card">
+                
+                <!-- 질문 1 -->
+                <div class="question">
+                    <p class="question-title">1. 친구가 주식으로 대박 났다는 소식을 들었을 때 나는?</p>
+                    <label><input type="radio" name="q1" value="5"> "대단하다! 나라면 무서워서 못했을 텐데..."</label>
+                    <label><input type="radio" name="q1" value="10"> "오, 좋은데? 어떤 종목인지 물어봐야지."</label>
+                    <label><input type="radio" name="q1" value="20"> "나도 질 수 없지! 바로 주식 계좌를 확인한다."</label>
+                </div>
 
-            <!-- 질문 2 -->
-            <div class="question">
-                <p>2. 투자, 해보신 적 있으신가요?</p>
-                <label><input type="radio" name="q2" value="5"> 아니요, 처음이에요</label>
-                <label><input type="radio" name="q2" value="10"> 이제 막 시작했어요</label>
-                <label><input type="radio" name="q2" value="15"> 조금 해봤어요</label>
-                <label><input type="radio" name="q2" value="20"> 경험이 많아요</label>
-            </div>
+                <!-- 질문 2 -->
+                <div class="question">
+                    <p class="question-title">2. 월급날, 내 통장 잔고는 보통...?</p>
+                    <label><input type="radio" name="q2" value="20"> "항상 텅 비어있다. 다음 월급날만 기다린다."</label>
+                    <label><input type="radio" name="q2" value="10"> "계획적으로 소비하고, 일부는 저축한다."</label>
+                    <label><input type="radio" name="q2" value="5"> "월급의 절반 이상은 무조건 저축! 또는 투자!"</label>
+                </div>
 
-            <!-- 질문 3 -->
-            <div class="question">
-                <p>3. 만약 투자한 돈이 15% 줄어든다면, 어떻게 하시겠어요?</p>
-                <label><input type="radio" name="q3" value="5"> 무서워서 다 팔래요</label>
-                <label><input type="radio" name="q3" value="10"> 조금 팔고 지켜볼래요</label>
-                <label><input type="radio" name="q3" value="15"> 기다리면 오를 거라 믿어요</label>
-                <label><input type="radio" name="q3" value="20"> 더 살 수 있는 좋은 기회예요</label>
-            </div>
+                <!-- 질문 3 -->
+                <div class="question">
+                    <p class="question-title">3. 길을 가다 10만 원을 주웠다! 나는...</p>
+                    <label><input type="radio" name="q3" value="20"> "와, 횡재다! 바로 맛있는 거 사 먹는다."</label>
+                    <label><input type="radio" name="q3" value="10"> "일단 주머니에 넣고, 뭘 할지 고민한다."</label>
+                    <label><input type="radio" name="q3" value="5"> "혹시 모르니 일단 비상금 통장에 넣어둔다."</label>
+                </div>
 
-            <!-- 질문 4 -->
-            <div class="question">
-                <p>4. 일 년에 어느 정도 수익을 기대하시나요?</p>
-                <label><input type="radio" name="q4" value="5"> 은행 이자보다 조금 더 (5% 미만)</label>
-                <label><input type="radio" name="q4" value="10"> 조금의 위험은 괜찮아요 (5% ~ 10%)</label>
-                <label><input type="radio" name="q4" value="15"> 어느 정도 위험을 감수할 수 있어요 (10% ~ 20%)</label>
-                <label><input type="radio" name="q4" value="20"> 위험해도 높은 수익이 좋아요 (20% 이상)</label>
-            </div>
+                <!-- 질문 4 -->
+                <div class="question">
+                    <p class="question-title">4. 쇼핑할 때 나의 스타일은?</p>
+                    <label><input type="radio" name="q4" value="20"> "꽂히면 바로 산다! 고민은 배송만 늦출 뿐."</label>
+                    <label><input type="radio" name="q4" value="10"> "장바구니에 넣어두고 며칠 동안 고민한다."</label>
+                    <label><input type="radio" name="q4" value="5"> "가격 비교는 기본, 할인 쿠폰까지 꼼꼼히 챙긴다."</label>
+                </div>
 
-            <!-- 질문 5 -->
-            <div class="question">
-                <p>5. 만약에 손해를 본다면, 어느 정도까지 괜찮으신가요?</p>
-                <label><input type="radio" name="q5" value="5"> 원금은 꼭 지켜야 해요</label>
-                <label><input type="radio" name="q5" value="10"> 조금은 괜찮아요 (10%까지)</label>
-                <label><input type="radio" name="q5" value="15"> 감수할 수 있어요 (30%까지)</label>
-                <label><input type="radio" name="q5" value="20"> 큰 손해도 괜찮아요 (50% 이상)</label>
-            </div>
+                <!-- 질문 5 -->
+                <div class="question">
+                    <p class="question-title">5. 10년 뒤 나의 모습은...?</p>
+                    <label><input type="radio" name="q5" value="20"> "경제적 자유를 이룬 파이어족!"</label>
+                    <label><input type="radio" name="q5" value="10"> "지금보다 여유롭고 안정적인 삶을 살고 있을 것 같다."</label>
+                    <label><input type="radio" name="q5" value="5"> "큰 부자는 아니더라도, 걱정 없이 살고 있으면 좋겠다."</label>
+                </div>
 
-            <button type="submit" class="submit-btn">내 투자 스타일 알아보기</button>
-        </form>
+                <button type="submit" class="submit-btn">결과 확인하기</button>
+            </form>
 
-        <section id="result-section" class="result-card" style="display: none;">
-            <h2>내 투자 스타일은 바로...</h2>
-            <div id="result-content">
-                <!-- 분석 결과가 여기에 동적으로 삽입됩니다. -->
-            </div>
-        </section>
-    </main>
-
+            <section id="result-section" class="result-card" style="display: none;">
+                <div id="result-content">
+                    <!-- 분석 결과가 여기에 동적으로 삽입됩니다. -->
+                </div>
+            </section>
+        </main>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

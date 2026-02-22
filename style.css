@@ -1,211 +1,166 @@
-/* 기본 스타일 */
+:root {
+    --primary-color: #0075FF;
+    --background-color: #F0F2F5;
+    --card-background: #FFFFFF;
+    --text-color: #333333;
+    --light-text-color: #767676;
+    --border-color: #E0E0E0;
+    --button-hover-color: #005ECC;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-/* 히어로 섹션 */
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
 .hero-section {
     text-align: center;
     margin-bottom: 30px;
 }
 
 .hero-section h1 {
-    font-size: 2.5em;
-    color: #1a73e8;
+    font-size: 2.2em;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .hero-section p {
-    font-size: 1.2em;
-    color: #5f6368;
+    font-size: 1.1em;
+    color: var(--light-text-color);
 }
 
-/* 카드 공통 스타일 */
 .quiz-card, .result-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background);
+    border-radius: 20px;
     padding: 30px;
-    max-width: 600px;
-    width: 100%;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
-
-.quiz-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-
-/* 설문 폼 스타일 */
-.quiz-card h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #1a73e8;
-    font-size: 1.8em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .question {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.question p {
-    font-weight: bold;
-    margin-bottom: 10px;
+.question-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .question label {
     display: block;
-    margin-bottom: 8px;
+    background-color: #F8F9FA;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
-    padding: 10px;
-    border-radius: 8px;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid var(--border-color);
 }
 
 .question label:hover {
-    background-color: #f1f3f4;
+    background-color: #E9ECEF;
 }
 
 .question input[type="radio"] {
-    margin-right: 10px;
+    display: none;
 }
 
-/* 제출 버튼 */
+.question input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
 .submit-btn {
-    display: block;
-    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 700;
     padding: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(90deg, #1a73e8, #4285f4);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: background-color 0.2s;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: var(--button-hover-color);
 }
 
-/* 결과 카드 스타일 */
-.result-card h2, #result-content h3 {
-    color: #1a73e8;
+.result-card {
     text-align: center;
+}
+
+.result-card h3 {
     font-size: 1.8em;
     margin-bottom: 20px;
-}
-
-#result-content h3 {
-    border-bottom: 2px solid #1a73e8;
-    padding-bottom: 5px;
-    margin-top: 25px;
-    text-align: left;
-    font-size: 1.5em;
-}
-
-
-#result-content p {
-    margin-bottom: 15px;
-}
-
-#result-content ul {
-    list-style-type: "\2714\00a0"; /* 체크마크 */
-    padding-left: 20px;
-}
-
-#result-content li {
-    padding: 5px 0;
 }
 
 .profile-badge {
     display: inline-block;
     padding: 8px 15px;
     border-radius: 20px;
-    font-weight: bold;
-    color: #fff;
+    font-weight: 700;
+    color: white;
     margin-bottom: 15px;
 }
 
-.profile-conservative { background-color: #34a853; } /* 녹색 */
-.profile-balanced { background-color: #fbbc05; } /* 노란색 */
-.profile-aggressive { background-color: #ea4335; } /* 빨간색 */
+.profile-conservative {
+    background-color: #4CAF50;
+}
 
-/* 최고의 투자 전략 카드 */
+.profile-balanced {
+    background-color: #FFC107;
+}
+
+.profile-aggressive {
+    background-color: #F44336;
+}
+
 .best-rec-card {
-    background-color: #e8f0fe;
-    border: 2px solid #1a73e8;
-    border-radius: 10px;
+    background-color: #F8F9FA;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
     padding: 20px;
-    margin: 25px 0;
+    margin: 30px 0;
+    text-align: left;
 }
 
 .best-rec-card h4 {
     margin: 0 0 15px 0;
-    font-size: 1.3em;
-    color: #1967d2;
-    text-align: center;
+    font-size: 1.2em;
 }
 
-.best-rec-card .rec-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #1967d2;
-    margin: 0 0 15px 0;
-    text-align: center;
+.rec-title {
+    font-size: 1.3em;
+    font-weight: 700;
 }
 
 .rec-ticker {
-    font-size: 0.8em;
-    font-weight: normal;
-    color: #5f6368;
+    color: var(--light-text-color);
 }
 
-.rec-details p {
-    margin-bottom: 10px;
-    font-size: 1em;
-}
-
-.rec-details p b {
-    color: #1967d2;
+.rec-details {
+    margin-top: 15px;
+    line-height: 1.6;
 }
 
 .disclaimer {
     font-size: 0.9em;
-    color: #888;
-    margin-top: 20px;
-    text-align: center;
+    color: var(--light-text-color);
+    margin-top: 30px;
 }
 
-
-/* 반응형 디자인 */
-@media (max-width: 600px) {
-    body {
-        padding: 15px;
-    }
-
-    .hero-section h1 {
-        font-size: 2em;
-    }
-
-    .quiz-card, .result-card {
-        padding: 20px;
-    }
-
-    .submit-btn {
-        padding: 12px;
-        font-size: 1.1em;
-    }
-}

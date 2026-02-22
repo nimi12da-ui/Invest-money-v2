@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let score = 0;
         let answeredQuestions = 0;
 
+        // 라디오 버튼 질문 점수 계산
         for (let i = 1; i <= 5; i++) {
             const value = formData.get(`q${i}`);
             if (value) {
@@ -25,65 +26,100 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let profile = '';
         let description = '';
+        let animal_img = '';
         let bestRecommendation = {};
         let otherOptions = [];
-        let profileClass = '';
 
         if (score <= 30) {
-            profile = '보수적 (Conservative)';
-            profileClass = 'profile-conservative';
-            description = '안정성을 최우선으로 생각하는 투자자입니다. 원금 손실의 위험을 최소화하고, 예적금보다 약간 높은 수준의 수익률에 만족하는 경향이 있습니다.';
+            profile = '안전지향 거북이';
+            animal_img = 'https://i.imgur.com/n1mE2o2.png'; // 거북이 이미지
+            description = '원금 손실을 최소화하는 안정적인 투자를 가장 선호하는군요. 마치 단단한 등껍질로 자신을 보호하는 거북이처럼, 당신은 예측 가능한 수익률을 중요하게 생각합니다.';
             bestRecommendation = {
-                title: '대한민국 국고채 10년물',
-                ticker: 'KTB10Y',
+                title: '국고채 3년물',
+                ticker: 'KOFR',
                 details: `
-                    <p><b>[기대 수익률]</b> 연 3.0 ~ 3.5%</p>
-                    <p><b>[2026년 말 전망]</b> 글로벌 경제의 불확실성이 지속될 가능성이 높아 안전자산으로서의 국채의 매력은 계속 유지될 것입니다. 향후 금리 인하 시기에는 채권 가격 상승으로 인한 추가 자본 차익도 기대할 수 있습니다. 포트폴리오의 안정성을 확보하는 가장 확실한 선택입니다.</p>
+                    <p><b>[특징]</b> 정부가 보증하는 가장 안전한 채권입니다. 금리 변동에 따른 가격 변화가 적어 안정적인 이자 수익을 기대할 수 있습니다.</p>
+                    <p><b>[투자 포인트]</b> 은행 예금보다 약간 높은 수익률을 추구하며, 포트폴리오의 '안전 마진'을 확보하는 데 최적입니다.</p>
                 `
             };
             otherOptions = [
-                '삼성전자 (Ticker: 005930): 안정적인 대형 우량주',
-                '맥쿼리인프라 (Ticker: 088980): 높은 배당률의 인프라 펀드',
-                '금 (Gold): 전통적인 인플레이션 헤지 자산'
+                '신한 SOL 미국 S&P 500 (H): 환율 변동 위험을 줄인 미국 대표 지수 투자',
+                '맥쿼리인프라: 국내 주요 인프라 자산에 투자하여 꾸준한 배당금을 지급',
+                '달러(USD) 예금: 대표적인 안전자산으로, 환차익을 기대할 수 있음'
+            ];
+        } else if (score <= 50) {
+            profile = '신중한 코끼리';
+            animal_img = 'https://i.imgur.com/5JT4SgG.png'; // 코끼리 이미지
+            description = '무작정 뛰어들기보다는 신중하게 분석하고 결정하는 투자자시군요. 코끼리처럼 덩치는 크지만, 그만큼 발걸음 하나하나에 신중을 기하는 타입입니다.';
+            bestRecommendation = {
+                title: 'TIGER 미국배당다우존스',
+                ticker: '360750',
+                details: `
+                    <p><b>[특징]</b> 10년 이상 꾸준히 배당금을 늘려온 우량 기업에 투자합니다. 안정적인 현금 흐름을 창출하는 기업들로 구성되어 있습니다.</p>
+                    <p><b>[투자 포인트]</b> 꾸준한 배당금과 함께 장기적인 주가 상승을 함께 기대할 수 있어, 안정성과 성장의 균형을 맞추고 싶은 투자자에게 적합합니다.</p>
+                `
+            };
+            otherOptions = [
+                '삼성전자: 대한민국 1등 기업이자, 글로벌 반도체 시장의 리더',
+                'S&P 500 지수 추종 ETF: 전 세계에서 가장 영향력 있는 500개 기업에 분산 투자',
+                '판교/강남 핵심 권역 오피스 빌딩 (리츠 간접투자): 안정적인 임대 수익을 기대할 수 있음'
             ];
         } else if (score <= 70) {
-            profile = '균형적 (Balanced)';
-            profileClass = 'profile-balanced';
-            description = '안정성과 수익성의 균형을 추구하는 투자자입니다. 어느 정도의 위험을 감수하여 은행 이자 이상의 수익을 기대하지만, 공격적인 투자에는 신중한 태도를 보입니다.';
+            profile = '균형잡힌 부엉이';
+            animal_img = 'https://i.imgur.com/qgWJ5dD.png'; // 부엉이 이미지
+            description = '밤낮으로 세상을 살피는 부엉이처럼, 시장 전체를 넓게 바라보며 기회를 포착하는군요. 안정성과 수익성의 균형점을 찾아 현명하게 투자합니다.';
             bestRecommendation = {
-                title: 'S&P 500 지수 추종 ETF',
+                title: 'S&P 500 지수 추종 ETF (SPY)',
                 ticker: 'SPY',
                 details: `
-                    <p><b>[기대 수익률]</b> 연 8 ~ 12%</p>
-                    <p><b>[2026년 말 전망]</b> AI 기술 혁신과 견고한 미국 소비 시장을 바탕으로 장기적인 우상향이 가장 유력한 자산입니다. 2025년 이후 연준의 금리 인하가 본격화되면 기술주 중심의 성장이 가속화될 가능성이 높습니다. 시장 전체에 투자하여 안정적인 장기 성장을 추구하는 최고의 전략입니다.</p>
+                    <p><b>[특징]</b> 미국을 대표하는 500개 대형 기업에 한 번에 투자하는 효과를 가집니다. 가장 기본적인 '시장'에 투자하는 전략입니다.</p>
+                    <p><b>[투자 포인트]</b> 장기적으로 가장 꾸준한 우상향을 보여준 지수입니다. 기술 혁신과 미국 경제의 성장을 믿는다면 최고의 선택입니다.</p>
                 `
             };
             otherOptions = [
-                '이더리움 (Ticker: ETH): 스마트 컨트랙트 플랫폼의 성장성',
-                'TIGER 미국배당다우존스 (Ticker: 360750): 꾸준한 배당 성장',
-                '판교/강남 핵심 권역 오피스 빌딩 (리츠 간접투자)'
+                '이더리움(ETH): 스마트 컨트랙트 플랫폼의 성장성에 투자',
+                'TIGER 차이나전기차SOLACTIVE: 폭발적으로 성장하는 중국 전기차 시장에 투자',
+                '코카콜라(KO): 50년 이상 배당을 늘려온 대표적인 배당킹 주식'
             ];
-        } else {
-            profile = '공격적 (Aggressive)';
-            profileClass = 'profile-aggressive';
-            description = '높은 수익률을 위해 높은 위험을 감수할 준비가 된 투자자입니다. 단기적인 시장 변동성을 기회로 활용하며, 자산의 큰 폭 성장을 목표로 합니다.';
+        } else if (score <= 90) {
+            profile = '기회를 노리는 하이에나';
+            animal_img = 'https://i.imgur.com/J3t0sN4.png'; // 하이에나 이미지
+            description = '남들이 보지 못하는 기회를 포착하는 능력이 뛰어납니다. 하이에나처럼 끈기 있게 기다리다가, 확신이 들면 과감하게 베팅하여 높은 수익을 추구합니다.';
             bestRecommendation = {
                 title: '엔비디아 (NVIDIA)',
                 ticker: 'NVDA',
                 details: `
-                    <p><b>[기대 수익률]</b> 연 20% 이상 (높은 변동성 수반)</p>
-                    <p><b>[2026년 말 전망]</b> AI 시장의 독점적인 지위를 바탕으로 2026년까지 가장 폭발적인 성장이 기대되는 종목입니다. 데이터센터, 자율주행, AI 소프트웨어 등 모든 미래 산업의 핵심 인프라를 제공하며, 시장의 기대를 뛰어넘는 실적을 계속 발표할 가능성이 높습니다. 높은 위험 속에서 최고의 수익을 추구하는 투자자에게 가장 매력적인 선택입니다.</p>
+                    <p><b>[특징]</b> AI 시대를 이끄는 독점적인 GPU 기술을 보유한 기업입니다. 데이터센터, 자율주행 등 미래 산업의 핵심입니다.</p>
+                    <p><b>[투자 포인트]</b> 시장의 기대를 뛰어넘는 실적을 보여주며 폭발적인 성장을 이어가고 있습니다. 높은 변동성을 감수하고 최고의 수익률을 노리는 투자자에게 적합합니다.</p>
                 `
             };
             otherOptions = [
-                '비트코인 (Ticker: BTC): 디지털 금, 높은 변동성의 고수익 자산',
-                'SOXL (3배 레버리지 반도체 ETF): 극대화된 수익 추구',
-                '베트남/인도 등 신흥국 시장 투자 ETF'
+                '비트코인(BTC): 디지털 금이라 불리며, 높은 변동성과 함께 높은 기대수익률을 가짐',
+                'SOXL (3배 레버리지 반도체 ETF): 반도체 산업의 상승에 3배로 투자하여 수익을 극대화',
+                '베트남/인도 등 신흥국 시장 투자 ETF: 높은 경제 성장률을 바탕으로 한 고수익 추구'
+            ];
+        } else {
+            profile = '공격적인 불사조';
+            animal_img = 'https://i.imgur.com/7b1Q1nL.png'; // 불사조 이미지
+            description = '리스크를 두려워하지 않는 대담한 투자자! 마치 불사조처럼, 큰 하락에도 굴하지 않고 더 높이 날아오를 기회로 삼습니다. 시장의 변동성을 즐기며 최고의 수익률을 목표로 합니다.';
+            bestRecommendation = {
+                title: '비트코인 (Bitcoin)',
+                ticker: 'BTC',
+                details: `
+                    <p><b>[특징]</b> 최초의 암호화폐이자 디지털 금으로 불리는 자산입니다. 탈중앙화된 가치 저장 수단으로 주목받고 있습니다.</p>
+                    <p><b>[투자 포인트]</b> 극심한 변동성은 가장 큰 위험이자 기회입니다. 강력한 한 방을 노리는 공격적인 투자자에게 '하이 리스크, 하이 리턴'의 정수를 보여줄 것입니다.</p>
+                `
+            };
+            otherOptions = [
+                '테슬라(TSLA): 전기차와 AI, 로봇 기술을 결합한 파괴적 혁신 기업',
+                'TQQQ (나스닥 100 3배 레버리지 ETF): 미국 기술주의 성장에 3배로 투자',
+                '도지코인(DOGE): 강력한 커뮤니티를 기반으로 한 밈(Meme) 코인'
             ];
         }
 
         let resultHTML = `
-            <h3>당신의 투자 성향: <span class="profile-badge ${profileClass}">${profile}</span></h3>
+            <img src="${animal_img}" alt="${profile}" style="width:150px; height:150px; margin-bottom: 20px;">
+            <h3>당신은 ${profile}!</h3>
             <p>${description}</p>
             
             <div class="best-rec-card">
@@ -96,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <ul>
                 ${otherOptions.map(item => `<li>${item}</li>`).join('')}
             </ul>
-            <p class="disclaimer">※ 본 결과는 참고 자료이며, 실제 투자 결정은 전문가와 상담 후 신중하게 내리셔야 합니다.</p>
+            <p class="disclaimer">※ 본 결과는 재미를 위한 참고 자료이며, 실제 투자 결정은 개인의 판단과 책임 하에 신중하게 내리셔야 합니다.</p>
         `;
 
         resultContent.innerHTML = resultHTML;
